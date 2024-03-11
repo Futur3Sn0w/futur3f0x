@@ -6,6 +6,8 @@ My personal userChrome.css tweaklist and some matching UI adjustments to make Fi
 |---|---|
 |![image](https://github.com/Futur3Sn0w/futur3f0x/assets/18166632/25ce25ce-a230-49cc-a131-030c796db69c)|![image](https://github.com/Futur3Sn0w/futur3f0x/assets/18166632/ebbb82a3-cfe5-4bd0-bced-5f7bab827d8e)|
 
+**Note:** This setup looks best on macOS, and although tested on Windows, blur doesn't work, and the layout needs tweaks to look right.
+
 ## Tweaks made
 - Misc
  	- **BLUR!** Native macOS blur effects around the window. Looks great when focused or inactive!
