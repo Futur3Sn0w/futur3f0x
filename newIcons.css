@@ -1,0 +1,335 @@
+:root,
+html,
+body {
+    --mf-fast-invoke: cubic-bezier(0, 0, 0, 1);
+    --mf-strong-invoke: cubic-bezier(0.13, 1.62, 0, 0.92);
+    --mf-fast-dismiss: cubic-bezier(0, 0, 0, 1);
+    --mf-soft-dismiss: cubic-bezier(1, 0, 1, 1);
+    --mf-point-to-point: cubic-bezier(0.55, 0.55, 0, 1);
+    --mf-fade-in-out: linear;
+    --mf-no-src-icon: url("chrome-icons/no-src.svg");
+    --mf-audio-icon: url("chrome-icons/audio.svg");
+    --mf-audio-muted-icon: url("chrome-icons/audio-muted.svg");
+    --mf-audio-blocked-icon: url("chrome-icons/audio-blocked.svg");
+    --mf-close-tab-icon: url("chrome-icons/close-tab.svg");
+    --mf-new-tab-icon: url("chrome-icons/new-tab.svg");
+    --mf-arrow-back-icon: url("chrome-icons/arrow-back.svg");
+    --mf-refresh-icon: url("chrome-icons/refresh.svg");
+    --mf-close-icon: url("chrome-icons/close.svg");
+    --mf-home-icon: url("chrome-icons/home.svg");
+    --mf-dev-icon: url("chrome-icons/dev.svg");
+    --mf-menu-icon: url("chrome-icons/menu.svg");
+    --mf-menu-update-icon: url("chrome-icons/menu-update.svg");
+    --mf-extension-icon: url("chrome-icons/extension.svg");
+    --mf-extension-blocked-icon: url("chrome-icons/extension-blocked.svg");
+    --mf-download-icon: url("chrome-icons/download.svg");
+    --mf-info-icon: url("chrome-icons/info.svg");
+    --mf-lock-icon: url("chrome-icons/lock.svg");
+    --mf-warning-icon: url("chrome-icons/warning.svg");
+    --mf-properties-icon: url("chrome-icons/properties.svg");
+    --mf-tracking-protection-icon: url("chrome-icons/tracking-protection.svg");
+    --mf-star-icon: url("chrome-icons/star.svg");
+    --mf-chevron-icon: url("chrome-icons/chevron.svg");
+    --mf-folder-icon: url("chrome-icons/folder.svg");
+    --mf-check-icon: url("chrome-icons/check.svg");
+    --mf-edit-icon: url("chrome-icons/edit.svg");
+    --mf-arrow-right-icon: url("chrome-icons/arrow-right.svg");
+    --mf-white: #fff;
+    --mf-black: #000;
+    --mf-grey-900-white-4-percent: #292a2d;
+    --mf-grey-900-white-5-percent: #35363a;
+    --mf-grey-900: #202124;
+    --mf-grey-800: #3c4043;
+    --mf-grey-700: #5f6368;
+    --mf-grey-600: #80868b;
+    --mf-grey-500: #9aa0a6;
+    --mf-grey-400: #bdc1c6;
+    --mf-grey-300: #dadce0;
+    --mf-grey-200: #e8eaed;
+    --mf-grey-100: #f1f3f4;
+    --mf-grey-50: #f8f9fa;
+    --mf-blue-900: #174ea6;
+    --mf-blue-800: #185abc;
+    --mf-blue-700: #1967d2;
+    --mf-blue-600: #1a73e8;
+    --mf-blue-500: #4285f4;
+    --mf-blue-400: #669df6;
+    --mf-blue-300: #8ab4f8;
+    --mf-blue-200: #aecbfa;
+    --mf-blue-100: #d2e3fc;
+    --mf-blue-50: #e8f0fe;
+    --mf-elevation-2: 0 2px 4px 0 rgba(0, 0, 0, 0.28);
+    --mf-elevation-3: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    --mf-elevation-4: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    --mf-accent-color: var(--mf-blue-300);
+    --mf-accent-color-hover: color-mix(in srgb, var(--mf-accent-color) 80%, transparent);
+    --mf-accent-color-transparent: color-mix(in srgb, var(--mf-accent-color) 8.37%, transparent);
+    --mf-accent-color-transparent-active: color-mix(in srgb, var(--mf-accent-color) 20%, transparent);
+    --mf-background-color-0: var(--mf-grey-900);
+    --mf-background-color-50: var(--mf-grey-900-white-4-percent);
+    --mf-background-color-100: var(--mf-grey-900-white-5-percent);
+    --mf-text-primary: var(--mf-grey-200);
+    --mf-text-secondary: var(--mf-grey-500);
+    --mf-text-on-accent: var(--mf-grey-900);
+    --mf-secondary-button-text: var(--mf-accent-color);
+    --mf-control-background-color: color-mix(in srgb, var(--mf-white) 6.05%, transparent);
+    --mf-control-border-color: color-mix(in srgb, var(--mf-white) 6.05%, transparent);
+    --mf-input-background-color: var(--mf-background-color-0);
+    --mf-menu-background-color: var(--mf-background-color-50);
+    --mf-menu-background-color-hover: #323334;
+    --mf-menu-border-color: var(--mf-grey-800);
+    --mf-tab-separator-color: color-mix(in srgb, var(--mf-white) 20%, transparent);
+    --mf-tab-outline-color: color-mix(in srgb, var(--mf-black) 10%, transparent);
+    --mf-tab-opacity: 1;
+    --mf-tab-opacity-hover: 0.5;
+    --mf-tab-icon-color: #c3c3c3;
+    --mf-tab-label-color: #e3e3e3;
+    --mf-icon-color-primary: var(--mf-grey-100);
+    --mf-icon-color-secondary: var(--mf-grey-500);
+    --mf-content-separator-color: #606164;
+    --mf-selection-text-color: var(--mf-white);
+    --mf-selection-background-color: var(--mf-blue-900)
+}
+
+/* 
+.tab-icon-image:not([src]),
+.tab-icon-image:-moz-broken {
+    content: var(--mf-no-src-icon) !important;
+    fill: var(--mf-grey-600) !important
+} */
+
+.unified-nav-forward:not([_moz-menuactive])[uri*="about:"],
+.unified-nav-back:not([_moz-menuactive])[uri*="about:"] {
+    list-style-image: var(--mf-no-src-icon) !important;
+    fill: var(--mf-grey-600) !important
+}
+
+#urlbar-results .urlbarView-favicon[src="chrome://global/skin/icons/defaultFavicon.svg"] {
+    fill: rgba(0, 0, 0, 0) !important;
+    background: var(--mf-no-src-icon) !important
+}
+
+.all-tabs-button:not([src]) {
+    list-style-image: var(--mf-no-src-icon) !important;
+    fill: var(--mf-grey-600) !important
+}
+
+.tab-close-button,
+.close-icon {
+    list-style-image: var(--mf-close-tab-icon) !important
+}
+
+#tabs-newtab-button,
+#new-tab-button {
+    list-style-image: var(--mf-new-tab-icon) !important
+}
+
+.toolbarbutton-1:is(#back-button, #forward-button),
+#context-back,
+#context-forward,
+.subviewbutton-back,
+.identity-popup-expander {
+    list-style-image: var(--mf-arrow-back-icon) !important
+}
+
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr),
+.unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl) {
+    list-style-image: var(--mf-arrow-back-icon) !important
+}
+
+.unified-nav-forward[_moz-menuactive]:-moz-locale-dir(ltr)>hbox>image,
+.unidied-nav-back[_moz-menuactive]:-moz-locale-dir(rtl)>hbox>image {
+    transform: scaleX(-1) !important
+}
+
+.unified-nav-back[_moz-menuactive]:-moz-locale-dir(ltr),
+.unidied-nav-forward[_moz-menuactive]:-moz-locale-dir(rtl) {
+    list-style-image: var(--mf-arrow-back-icon) !important
+}
+
+.toolbarbutton-1#forward-button .toolbarbutton-icon,
+#context-forward .menu-iconic-icon {
+    transform: scaleX(-1) !important
+}
+
+#reload-button,
+#context-reload {
+    list-style-image: var(--mf-refresh-icon) !important;
+    -moz-box-align: center !important;
+    align-items: center !important
+}
+
+#stop-button {
+    list-style-image: var(--mf-close-icon) !important
+}
+
+/* #nav-bar #reload-button .toolbarbutton-icon,
+#nav-bar #stop-button .toolbarbutton-icon {
+    padding: 4px !important
+} */
+
+#home-button {
+    list-style-image: var(--mf-home-icon) !important
+}
+
+/* #nav-bar #home-button .toolbarbutton-icon {
+    padding: 6px !important
+} */
+
+#identity-box[pageproxystate=valid]:is(.verifiedDomain, .mixedActiveBlocked) #identity-icon {
+    list-style-image: var(--mf-lock-icon) !important
+}
+
+#identity-box[pageproxystate=valid]:is(.notSecure, .mixedActiveContent, .httpsOnlyErrorPage, .weakCipher, .mixedDisplayContent, .mixedDisplayContentLoadedActiveBlocked, .certUserOverridden, #identity-box[pageproxystate=valid].certErrorPage) #identity-icon {
+    list-style-image: var(--mf-warning-icon) !important
+}
+
+#identity-popup[connection^=secure] .identity-popup-security-connection .identity-popup-security-connection-icon {
+    list-style-image: var(--mf-lock-icon) !important
+}
+
+#identity-popup:is([connection=secure-cert-user-overridden], [connection=cert-error-page], [connection^=not-secure]) .identity-popup-security-connection .identity-popup-security-connection-icon {
+    list-style-image: var(--mf-warning-icon) !important
+}
+
+#permissions-granted-icon {
+    list-style-image: var(--mf-properties-icon) !important
+}
+
+#tracking-protection-icon {
+    list-style-image: var(--mf-tracking-protection-icon) !important
+}
+
+#star-button,
+#context-bookmarkpage,
+#pageAction-panel-bookmark,
+#urlbar-engine-one-off-item-bookmarks {
+    list-style-image: var(--mf-star-icon) !important;
+    fill-opacity: 0 !important
+}
+
+#urlbar-engine-one-off-item-bookmarks {
+    fill-opacity: 1 !important
+}
+
+#star-button[starred],
+#tracking-protection-icon-box[active] {
+    fill: var(--mf-accent-color) !important
+}
+
+#star-button[starred],
+#context-bookmarkpage[starred] {
+    fill-opacity: 1 !important
+}
+
+#PlacesChevron,
+#nav-bar-overflow-button {
+    list-style-image: var(--mf-chevron-icon) !important
+}
+
+#unified-extensions-button,
+#identity-box[pageproxystate=valid].extensionPage #identity-icon,
+#identity-popup[connection=extension] .identity-popup-security-connection {
+    list-style-image: var(--mf-extension-icon) !important
+}
+
+/* #unified-extensions-button>image {
+    padding: 4.5px !important
+} */
+
+.tabbrowser-tab[image="chrome://mozapps/skin/extensions/extension.svg"] .tab-icon-image {
+    content: var(--mf-extension-icon) !important
+}
+
+.install-icon {
+    list-style-image: var(--mf-extension-icon) !important
+}
+
+.install-icon.blocked-permission-icon {
+    list-style-image: var(--mf-extension-blocked-icon) !important
+}
+
+#pageActionButton,
+#PanelUI-menu-button {
+    list-style-image: var(--mf-menu-icon) !important
+}
+
+#PanelUI-menu-button[badge-status|=update],
+.panel-banner-item[notificationid^=update] {
+    list-style-image: var(--mf-menu-update-icon) !important
+}
+
+.panel-banner-item[notificationid^=update] {
+    -moz-context-properties: fill, fill-opacity !important;
+    fill: currentColor !important
+}
+
+.bookmark-item[container],
+treechildren::-moz-tree-image(container) {
+    list-style-image: var(--mf-folder-icon) !important
+}
+
+.downloadIconShow .button-icon,
+.folder-icon {
+    list-style-image: var(--mf-folder-icon) !important
+}
+
+@media(-moz-platform: windows) {
+    menuitem[checked=true]>.menu-iconic-left {
+        list-style-image: var(--mf-check-icon) !important
+    }
+}
+
+.checkbox-check[checked] {
+    background-image: var(--mf-check-icon) !important
+}
+
+:is(.all-tabs-secondary-button, .tab-icon-overlay)[soundplaying],
+.tab-icon-sound {
+    list-style-image: var(--mf-audio-icon) !important;
+    fill: var(--mf-tab-icon-color) !important
+}
+
+.all-tabs-secondary-button[muted],
+.tab-icon-overlay[muted],
+.tab-icon-sound[muted] {
+    list-style-image: var(--mf-audio-muted-icon) !important;
+    fill: var(--mf-tab-icon-color) !important
+}
+
+.all-tabs-secondary-button[activemedia-blocked],
+.tab-icon-overlay[activemedia-blocked],
+.tab-icon-sound[activemedia-blocked] {
+    list-style-image: var(--mf-audio-muted-icon) !important;
+    fill: var(--mf-tab-icon-color) !important
+}
+
+.urlbarView-row[type=bookmark]>.urlbarView-row-inner>.urlbarView-no-wrap>.urlbarView-type-icon {
+    background-image: var(--mf-star-icon) !important;
+    fill: var(--mf-accent-color) !important
+}
+
+#downloads-button,
+#downloads-indicator-anchor {
+    list-style-image: var(--mf-download-icon) !important
+}
+
+#identity-box.unknownIdentity #identity-icon,
+#identity-popup[connection=net-error-page] .identity-popup-security-connection,
+.panel-info-button>image {
+    list-style-image: var(--mf-info-icon) !important
+}
+
+#developer-button {
+    list-style-image: var(--mf-dev-icon) !important
+}
+
+/* #developer-button>image {
+    padding: 4px !important
+} */
+
+#protections-popup-mainView .subviewbutton-nav:not(.notFound)::after,
+.widget-overflow-list .subviewbutton-nav::after,
+.PanelUI-subView .subviewbutton-nav::after {
+    content: var(--mf-arrow-right-icon) !important
+}
