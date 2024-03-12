@@ -45,8 +45,14 @@ Before you install futur3f0x's userChrome, I'd recommend setting up the navbar a
 3. Add another spacer to the right of the URL bar, before any buttons
 4. Move the newtab button from the tabs bar to the left of the extensions button
 
-## (Optional) about:config tweaks
-**Recommended:**
+## about:config tweaks
+**Required:**
+- Allow new icons to be properly colored:
+	- Set `svg.context-properties.content.enabled` to `true`
+- IF YOU want to enable the context menu tweaks, you'll need to:
+	- Set `widget.macos.native-context-menus` to `false`
+
+**Optional/Recommended:**
 - Remove the tab manager dropdown from the top-left:
 	- Set `browser.tabs.tabmanager.enabled` to `false`
 - Enable double-click to close tabs:
