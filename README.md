@@ -44,6 +44,7 @@ Before you install futur3f0x's userChrome, I'd recommend setting up the navbar a
 2. Add a spacer to the far-left of the toolbar, before the back, forward, reload buttons
 3. Add another spacer to the right of the URL bar, before any buttons
 4. Move the newtab button from the tabs bar to the left of the extensions button
+5. **Follow to about:config tweaks**
 
 ## about:config tweaks
 **Required:**
