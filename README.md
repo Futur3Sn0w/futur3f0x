@@ -66,6 +66,8 @@ Before you install futur3f0x's userChrome, I'd recommend setting up the navbar a
 	- Set `userchrome.windowed-screen-border` to `true`
 - Hide back/forward buttons when disabled:
 	- Set `userchrome.hide-history-nav` to `true`
+- Make address bar fully transparent until hovered/clicked:
+	- Set `userchrome.transparent-urlbar` to `true`  
 
 ## Download/Install
 The setup follows the basic process for setting up a userChrome.css file. The main difference is the addition of icon images for use around the UI.
