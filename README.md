@@ -37,16 +37,22 @@ My personal userChrome.css tweaklist and some matching UI adjustments to make Fi
 If you've never setup a custom userChrome.css before, I won't go into full detail here, but there's a great writeup from Winaero that will get you where you need to be. Then, come back here to install futur3f0x!  
 https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
   
-Before you install futur3f0x's userChrome, I'd recommend setting up the navbar as some items change when it's installed.  
+> Before you install futur3f0x's userChrome, I'd **highly** recommend setting up the navbar as some items change when it's installed.  
   
-**Customize Toolbar...**
+### Customize Toolbar...
 1. Remove any spacers from the toolbar
 2. Add a spacer to the far-left of the toolbar, before the back, forward, reload buttons
 3. Add another spacer to the right of the URL bar, before any buttons
 4. Move the newtab button from the tabs bar to the left of the extensions button
-5. **Follow to about:config tweaks**
+> If you experiment with different layouts and/or find something you like more, feel free to screenshot and tag me on socials!
 
-## about:config tweaks
+### about:config tweaks
+1. Navigate to **about:config** in a new tab
+2. Set the **required** keys (see below)
+3. Set any **optional** or **futur3f0x specific** keys (see below) as desired
+4. Navigate to **about:support**
+5. Click **Clear startup cache...** and then **Restart**  
+
 **Required:**
 - Allow new icons to be properly colored:
 	- Set `svg.context-properties.content.enabled` to `true`
@@ -70,11 +76,12 @@ Before you install futur3f0x's userChrome, I'd recommend setting up the navbar a
 	- Set `userchrome.transparent-urlbar` to `true`  
 
 ## Download/Install
-The setup follows the basic process for setting up a userChrome.css file. The main difference is the addition of icon images for use around the UI.
-1. Open your Firefox's **chrome** folder, and remove any files inside
-2. Download this repo, and copy the **userChrome.css, newIcons.css,** and the  **chrome_icons** folder to your **chrome** folder
-3. In Firefox, navigate to **about:support**, click **Clear startup cache...**, and then **Restart**
-4. When Firefox relaunches, you should be greeted with a pretty new UI!
+The setup follows the basic process for setting up a userChrome.css file. The main difference is the addition of icon images for use around the UI.  
+1. Follow the above steps ***FIRST!***
+2. Open your Firefox's **chrome** folder, and remove any files inside
+3. Download this repo, and copy the **userChrome.css, newIcons.css,** and the  **chrome_icons** folder to your **chrome** folder
+4. In Firefox, navigate to **about:support**, click **Clear startup cache...**, and then **Restart**
+5. When Firefox relaunches, you should be greeted with a pretty new UI!
 
 ## Notes and bugs
 - Context menu looks a bit strange, the padding adjustments are newer so I'm still tweaking them
