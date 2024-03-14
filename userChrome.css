@@ -34,16 +34,16 @@
 
 #appcontent {
   margin-top: 1px !important;
-  margin-inline: 6px !important;
-  margin-block-end: 6px !important;
+  margin-inline: 4px !important;
+  margin-block-end: 4px !important;
   border-radius: 9px !important;
   overflow: hidden !important;
 }
 
 #sidebar-box {
   margin-top: 1px !important;
-  margin-inline-start: 6px !important;
-  margin-block-end: 6px !important;
+  margin-inline-start: 4px !important;
+  margin-block-end: 4px !important;
   border-radius: 9px !important;
   overflow: hidden !important;
   box-shadow: 0 0 0 1px light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)) !important;
@@ -68,16 +68,16 @@
 
   #appcontent {
     margin-top: 1px !important;
-    margin-inline: 6px !important;
-    margin-block-end: 6px !important;
+    margin-inline: 4px !important;
+    margin-block-end: 4px !important;
     border-radius: 9px !important;
     overflow: hidden !important;
   }
 
   #sidebar-box {
     margin-top: 1px !important;
-    margin-inline-start: 6px !important;
-    margin-block-end: 6px !important;
+    margin-inline-start: 4px !important;
+    margin-block-end: 4px !important;
     border-radius: 9px !important;
     overflow: hidden !important;
     box-shadow: 0 0 0 1px light-dark(rgb(204, 204, 204), hsl(240, 5%, 5%)) !important;
@@ -130,6 +130,7 @@
 
 #TabsToolbar {
   padding: 0 6px !important;
+  margin-top: -3px !important;  
   padding-bottom: 3px !important;
 }
 
@@ -295,6 +296,18 @@
 }
 
 /* Transparent urlbar until hovered or focused */
+
+@media (-moz-bool-pref: "userchrome.transparent-urlbar") {
+  #urlbar:not([focused]) #urlbar-background,
+#searchbar {
+  opacity: 0 !important;
+}
+  
+  #urlbar:not([focused]):hover #urlbar-background,
+#searchbar {
+  opacity: 1 !important;
+}
+}
 
 #urlbar:not([focused]) #urlbar-background,
 #searchbar {
@@ -604,6 +617,11 @@ toolbarbutton.bookmark-item:not([container]):not([image]) image {
 #tabbrowser-arrowscrollbox,
 #TabsToolbar {
   min-height: 0px !important
+}
+
+#TabsToolbar {
+  padding: 0 3px !important;;
+  padding-bottom: 0 !important;
 }
 
 .accessibility-indicator,
