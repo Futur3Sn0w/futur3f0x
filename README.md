@@ -13,6 +13,7 @@ My personal userChrome.css tweaklist and some matching UI adjustments to make Fi
  	- **BLUR!** Native macOS blur effects around the window. Looks great when focused or inactive!
 	- Using Google Chrome icons/symbols around the UI
 	- (Optional) Rounded border around the page in windowed mode (Arc-inspired)
+	- (Optional) Compact 'unified extensions menu'
 	- Added a bit of padding to the context menu(s)
 - Automatically adjusts to light/dark theme
 	- Recommended to set to **system auto theme**
@@ -73,8 +74,10 @@ https://winaero.com/enable-loading-userchrome-css-usercontent-css-firefox/
 - Hide back/forward buttons when disabled:
 	- Set `userchrome.hide-history-nav` to `true`
 - Make address bar fully transparent until hovered/clicked:
-	- Set `userchrome.transparent-urlbar` to `true`  
-
+	- Set `userchrome.transparent-urlbar` to `true`
+- Show more items in extensions menu by compacting it
+	- Set `userchrome.compact-extensions-menu` to `true`
+  
 ## Download/Install
 The setup follows the basic process for setting up a userChrome.css file. The main difference is the addition of icon images for use around the UI.  
 1. Follow the above steps ***FIRST!***
@@ -86,7 +89,8 @@ The setup follows the basic process for setting up a userChrome.css file. The ma
 ## Notes and bugs
 - Context menu looks a bit strange, the padding adjustments are newer so I'm still tweaking them
 - In fullscreen, the background and webpage **don't** shift down when the navbar is hovered
-- The windowed border and padding is often broken, leaving sharp edges in place of the rounded ones
+- ~~The windowed border and padding is often broken, leaving sharp edges in place of the rounded ones~~
+	- This issue has been fixed with Futur3F0x v1.2
 	- Some may not prefer this, but you can enable it in **about:config** (see above)
 
 **I DO NOT** consider this an actively maintained project. I made this largely for personal use, so I'll only update the project when I make changes (rarely); with exception of UI-breaking changes that come through Firefox updates that need to be fixed.  
