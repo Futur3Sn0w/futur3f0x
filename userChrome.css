@@ -1,5 +1,91 @@
 @import url(./newIcons.css);
 
+/* Compact extensions menu */
+
+@media (-moz-bool-pref: "userchrome.compact-extensions-menu") {
+#unified-extensions-view {
+  width: unset !important;
+}
+
+#overflowed-extensions-list,
+#unified-extensions-area,
+.unified-extensions-list
+{
+  margin-inline: 6px !important;
+  display: flex !important;
+}
+
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view toolbarseparator
+{
+  display: none !important;
+}
+
+#unified-extensions-panel #unified-extensions-view {
+  margin-top: 4px !important;
+}
+
+#unified-extensions-manage-extensions
+{
+  margin-top: 8px !important;
+}
+
+#unified-extensions-panel vbox#overflowed-extensions-list:not(:empty),
+#unified-extensions-panel vbox#unified-extensions-area:not(:empty),
+#unified-extensions-panel vbox.unified-extensions-list:not(:empty)
+{
+  border-bottom: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+}
+
+
+#overflowed-extensions-list .toolbarbutton-icon,
+#unified-extensions-panel .toolbarbutton-icon,
+.unified-extensions-item-icon
+{
+  --uei-icon-size: 16px;
+}
+
+.toolbaritem-combined-buttons {
+  margin: 0 !important;
+  margin-right: 3px !important;
+}
+
+#unified-extensions-view > vbox > vbox > .unified-extensions-item {
+  padding-block: 0px !important;
+  margin-block: 0px !important;
+}
+
+#unified-extensions-view .subviewbutton-iconic[data-l10n-id="unified-extensions-item-open-menu"] .toolbarbutton-icon {
+  padding: 3px !important;
+}
+
+.unified-extensions-item-contents {
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.unified-extensions-item-name {
+  font-size: 90% !important; }
+
+.unified-extensions-item-message {
+  font-size: 0 !important; }
+
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton:not(:hover)
+{
+  opacity: 0.2 !important;
+}
+
+#unified-extensions-panel
+  :where(toolbaritem,unified-extensions-item)[attention]
+  .unified-extensions-item-action-button
+{
+  box-shadow:
+    1px 1px var(--uei-button-attention-dot-color) inset,
+    -1px -1px var(--uei-button-attention-dot-color) inset !important;
+}
+}
+
 /* Window padding (only in windowed mode) */
 
 #navigator-toolbox,
@@ -12,7 +98,31 @@
 }
 
 @media (-moz-bool-pref: "userchrome.windowed-screen-border") {
+  
+  .browserContainer {
+  border: solid 5px transparent !important;
+  border-top-width: 0px !important;
+}
+  
+  .browserStack > * {
+  border: none !important;
+  border-radius: 10px !important;
+}
+  
+  #tabbrowser-tabpanels[flex],
+  #appcontent[flex] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+  
+  #tabbrowser-tabbox[flex], #tabbrowser-tabpanels, browser[type="content-primary"], browser[type="content"] > html {
+  background: transparent !important;
+  background-color: transparent !important;
+  clip-path: inset(0px 0px 0px round 10px 0) !important;
+}
 
+  
+/* 
 :root:has(#navigator-toolbox:not([inFullscreen="true"])) {
 
 :root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
@@ -118,7 +228,7 @@
   border-bottom: none !important;
 }
 
-}
+} */
 
 }
 
@@ -516,18 +626,60 @@
 
 /* Autohide bookmarks bar */
 
-#PersonalToolbar{
-  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
-  --uc-bm-padding: 4px; /* Vertical padding to be applied to bookmarks */
-  --uc-autohide-toolbar-delay: 300ms; /* The toolbar is hidden after 0.6s */
-  
-  /* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
-  --uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
-  --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
+#nav-bar {
+  z-index: 1001 !important;
 }
 
-:root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px }
+#PersonalToolbar{
+  width: 100% !important;
+  display: flex !important;
+}
 
+toolbar:not(#TabsToolbar) > #personal-bookmarks {
+  flex: unset !important;
+}
+
+#PersonalToolbar:not([customizing]) #personal-bookmarks {
+  background-color: var(--box-background-color) !important;
+  box-shadow: 0 3px 7px 0 #00000033;
+  border-radius: 6px !important;
+  margin-top: 5px !important;
+  padding: 3px !important;
+  
+  position: absolute !important;
+  z-index: 1000 !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(-35px);
+  
+  opacity: 0 !important;
+  transition: .2s;
+  pointer-events: none !important;
+}
+
+#personal-bookmarks::before {
+  content: "" !important;
+  position: absolute !important;
+  z-index: -10 !important;
+  top: -5px !important;
+  left: -5% !important;
+  
+  width: 110% !important;
+  height: 40px !important;
+  
+  background: transparent !important;
+}
+
+#nav-bar:focus-within + #PersonalToolbar:not([customizing]) #personal-bookmarks,
+#navigator-toolbox:is(:hover,:focus-within) #PersonalToolbar:not([customizing]) #personal-bookmarks,
+#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar:not([customizing]) #personal-bookmarks,
+#navigator-toolbox:hover > #PersonalToolbar:not([customizing]) #personal-bookmarks{
+  opacity: 1 !important;
+  pointer-events: all !important;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* :root[uidensity="touch"] #PersonalToolbar{ --uc-bm-padding: 7px } */
+/* 
 #PersonalToolbar:not([customizing]){
   position: relative;
   margin-bottom: calc(-1px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
@@ -565,7 +717,7 @@
 
 #navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {  
   transform: rotateX(0);
-}
+} */
 
 /* compact bookmarks */
 
@@ -601,7 +753,6 @@ toolbarbutton.bookmark-item:not([container]):not([image]) image {
   display: flex !important;
   justify-content: center !important;
 }
-
 
 /* Stretch tabs to fill width */
 
